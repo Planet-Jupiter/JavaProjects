@@ -1,0 +1,32 @@
+public class SpeedConverter{
+
+    public static void main(String[] args){
+          printConversion(double kilometersPerHour);
+    }
+
+     //1 mile per hour is 1.609 kilometers per hour
+     // Math.round()
+    
+    public static long toMilesPerHour(double kilometersPerHour){
+     
+        if(kilometersPerHour < 0){
+            return -1;
+        } else {
+            double miles = kilometersPerHour / 1.609;
+            long roundedMile = Math.round(miles);
+            return roundedMile;
+        }
+        
+    }
+    
+    public static void printConversion(double kilometersPerHour){
+        
+        if(kilometersPerHour < 0){
+            System.out.println("Invalid Value");
+        } else {
+        System.out.println(kilometersPerHour + " km/h = " + toMilesPerHour(kilometersPerHour) + " mi/h");
+        }
+    }
+    
+
+}
