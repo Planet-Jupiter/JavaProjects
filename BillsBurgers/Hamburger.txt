@@ -1,0 +1,90 @@
+package com.JavaJacProjects
+
+import java.util.Scanner;
+
+//base burger to be the parent class
+
+public class Hamburger{
+   private Bread breadType;
+   private Meat meat;
+   private double basePrice = 5.50;
+   private String couponCode;
+
+   //additions will be added by methods.
+     //addLettuce();
+     //addTomatoes();
+     //addMustard();
+     //addMayo();
+  
+  public Hamburger(){
+    this.breadType = new Bread();
+    this.meat = new Meat();
+    addLettuce();
+    addTomatoes();
+    addMustard();
+    addMayo();
+  }
+
+  public double addLettuce(){
+     System.out.println("Would you like to add lettuce for an additional 0.25 cents?\nPress Y or N\n");
+     Scanner scanner = new Scanner(System.in);
+     String decision = scanner.nextLine();
+
+     if(decision.equals("Y"){
+      System.out.println("Lettuce added");
+      return basePrice += 0.25;
+     } 
+
+     System.out.println("No Lettuce added");
+     scanner.close();
+     return basePrice;
+
+  }  
+
+  public double addTomatoes(){
+     System.out.println("Would you like to add tomatoes for an additional 0.25 cents?\nPress Y or N\n");
+     Scanner scanner = new Scanner(System.in);
+     String decision = scanner.nextLine();
+
+     if(decision.equals("Y"){
+      System.out.println("Tomatoes added");
+      return basePrice += 0.25;
+     } 
+
+     System.out.println("No tomatoes added");
+     scanner.close();
+     return basePrice;
+
+   }
+
+  public double addMustard(){
+     System.out.println("Would you like to add mustard for an additional 0.10 cents?\nPress Y or N\n");
+     Scanner scanner = new Scanner(System.in);
+     String decision = scanner.nextLine();
+
+     if(decision.equals("Y"){
+      System.out.println("Mustard added");
+      return basePrice += 0.10;
+     } 
+
+     System.out.println("No mustard added");
+     scanner.close();
+     return basePrice;
+   }
+
+   public double addMayo(){
+     System.out.println("Would you like to add mayo for an additional 0.10 cents?\nPress Y or N\n");
+     Scanner scanner = new Scanner(System.in);
+     String decision = scanner.nextLine();
+
+     if(decision.equals("Y"){
+      System.out.println("Mayo added");
+      return basePrice += 0.10;
+     } 
+
+     System.out.println("No mayo added");
+     scanner.close();
+     return basePrice;
+   }
+
+}
